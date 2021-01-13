@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+
+$mainColor: #333333;
+$subColor: #fff;
+$keyColor: #109954;
+
+
+@mixin transition() {
+  transition: all .2s ease;
+}
+
+@mixin hover() {
+  transition: all .2s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
+@mixin mainFont() {
+  font-family: 'Roboto Slab', serif;
+  letter-spacing: 5px;
+}
+
+@mixin linkArrow {
+  position: relative;
+  padding-right: 16px;
+  &:after {
+    content: "\f105";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    color: #999;
+    font-size:16px;
+    margin-top: -7px;
+  }
+
+}

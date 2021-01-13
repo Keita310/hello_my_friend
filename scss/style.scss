@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+/*---------------------------------------------------------
+Theme Name: 
+Theme URI: 
+Description:
+Author: SATO
+Author URI: 
+Tags: 
+Text Domain: 
+---------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import "mixin";
+@import "bootstrap";
+
+$main-color: #000;
+$item-width: 380px;
+
+* {
+	
+}
+
+body {
+	font-family: "メイリオ","Meiryo","ヒラギノ丸ゴ ProN W4","Hiragino Maru Gothic ProN","ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+	color: $main-color;
+	line-height: 1.5;
+	text-align: center;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: block;
+}
+
+a {
+	color: $main-color;
+	outline: none;
+	transition: all .2s ease;
+
+	&:hover {
+		text-decoration: none;
+		color: $main-color;
+		opacity: .8;
+	}
+
+	&:active, &:link, &:visited {
+		text-decoration: none;
+		color: $main-color;
+	}
+}
+
+a:focus, *:focus {
+	outline: none;
+}
+
+
+header {
+	padding: 30px 0 50px;
+
+	.menu {
+		@include mainFont();
+		display: flex;
+		margin: 0 0 24px;
+
+		.menu-item {
+			margin: 0 10px;
+			font-weight: bold;
+			border-bottom: 1px solid transparent;
+			font-size: 26px;
+
+			&.current-menu-item,
+			&:hover {
+				border-color: $main-color;
+			}
+		}
+	}
+
+	//　ハンバーガーメニューのデザイン
+	.modal-menu {
+		display: none;
+		font-size: 30px;
+		padding-bottom: 20px;
+	}
+
+	// メニューの切り替え
+	@media screen and (max-width: 400px) {
+		.inline-menu {
+			display: none;
+		}
+		.modal-menu {
+			display: block;
+		}
+	}
+}
+
+#modal_menu {
+	.modal-content {
+		background-color: transparent;
+		border: 0;
+	}
+	li a {
+		display: block;
+		padding: 16px 8px;
+		font-size: 20px;
+		border-bottom: 1px solid #bbb;
+	}
+}
+
+main {
+	padding-bottom: 100px;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: $main-color;
+
+	.sns {
+		img {
+			width: 40px;
+		}
+	}
+
+	.return-top {
+		position: absolute;
+		top: -70px;
+		right: 20px;
+		font-size: 50px;
+		cursor: pointer;
+
+		i {
+			transition: all .2s ease;
+			&:hover {
+				opacity: .8;
+			}
+		}
+
+		&::after {
+			position: absolute;
+			z-index: -1;
+			top: 17px;
+			left: 2px;
+			content: " ";
+			width: 40px;
+			height: 40px;
+			background: #fff;
+		}
+	}
+}
+
+h1 {
+	@include mainFont();
+	width: 100%;
+	margin: 0 auto;
+	font-size: 80px;
+	display: inline-block;
+	padding: 12px 0 8px;
+	border: 2px solid $main-color;
+
+	a {
+		display: block;
+	}
+
+	@media screen and (max-width: 990px) {
+		font-size: 46px;
+	}
+
+	@media screen and (max-width: 600px) {
+		font-size: 40px;
+	}
+
+	@media screen and (max-width: 400px) {
+		font-size: 26px;
+	}
+}
+
+h2 {
+	@include mainFont();
+	background: #ccc;
+	padding: 8px 0 6px;
+	line-height: 1;
+	margin: 0 0 12px;
+	border-top: 2px solid #000;
+	border-bottom: 2px solid #000;
+
+	span {
+		display: block;
+		text-align: center;
+		font-size: 50px;
+		font-weight: bold;
+
+		@media screen and (max-width: 990px) {
+			font-size: 40px;
+		}
+
+		@media screen and (max-width: 600px) {
+			font-size: 30px;
+		}
+
+		@media screen and (max-width: 400px) {
+			font-size: 26px;
+		}
+	}
+}
+
+.items {
+	margin: 0 auto;
+
+	.item {
+		width: 100%;
+		max-width: $item-width;
+		text-align: center;
+		padding: 2px;
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			height: auto;
+			box-sizing: border-box;
+			border: 4px solid #000;
+		}
+
+		.content {
+			padding: 16px 16px 40px;
+			text-align: left;
+			line-height: 1.8;
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: ($item-width + 30px)) {
+		width: 100%!important;
+	}
+}
+
+// itemループの本文を表示する
+.item-content-show {
+	.items .item .content {
+		display: block;
+	}
+}
+
+.single {
+	.eyecatch {
+		img {
+			max-width: 100%;
+			max-height: 100%;
+			height: auto;
+		}
+	}
+
+	.content {
+		width: 80%;
+		margin: 20px auto 0;
+		line-height: 1.8;
+		text-align: left;
+
+		> div {
+			padding: 20px 0;
+		}
+
+		.english {
+			font-family: 'Cormorant Garamond', serif;
+			letter-spacing: 2px;
+			font-weight: bold;
+		}
+	}
+}
+
+///////////////////////////
+// Countryのメインページ
+///////////////////////////
+
+.balloon-bg {
+	position: relative;
+
+	img {
+		width: 100%;
+	}
+
+	.balloon-menu {
+		position: absolute;
+		top: 7%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+
+		li {
+			margin: 0 4px;
+//			position: absolute;
+			a {
+				@include mainFont();
+				border-radius: 100%;
+				width: 150px;
+				height: 150px;
+				background: #FFF;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				box-shadow: 2px 2px 4px 1px #000;
+				border: 2px solid #000;
+			}
+/*
+			&.noth-america   { top: 120px; left: 80px; }
+			&.asia           { top: 400px; left: 200px; }
+			&.europe         { top: 40px; left: 400px; }
+			&.africa         { top: 150px; right: 500px; }
+			&.south-america  { top: 80px; right: 200px; }
+			&.oceania        { top: 400px; right: 80px; }
+
+			@media screen and (max-width: 1200px) {
+				&.africa     { top: 250px; right: 500px; }
+				&.oceania    { top: 250px; right: 60px; }
+			}
+			@media screen and (max-width: 950px) {
+				a {
+					width: 120px;
+					height: 120px;
+				}
+				&.south-america  { top: 80px; right: 20px; }
+				&.asia           { top: 300px; left: 40px; }
+			}
+			@media screen and (max-width: 860px) {
+				&.africa     { top: 200px; right: 300px; }
+			}
+			@media screen and (max-width: 740px) {
+				&.europe     { top: 20px; left: 250px; }
+			}
+*/
+		}
+/*
+		@media screen and (max-width: 1200px) {
+			top: 50px;
+
+		}
+		@media screen and (max-width: 1000px) {
+			li a {
+				width: 120px;
+				height: 120px;
+			}
+		}
+		@media screen and (max-width: 800px) {
+			top: 20px;
+			li a {
+				width: 110px;
+				height: 110px;
+			}
+		}
+*/
+	}
+}
+
+
