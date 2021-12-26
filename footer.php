@@ -14,17 +14,17 @@
 			<div class="d-flex flex-row-reverse align-items-center py-2">
 				<ul class="sns d-flex">
 					<li class="p-2">
-						<a href="" target="_blank">
+						<a href="https://www.facebook.com/people/Hello-My-Friend/100076060938938" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png">
 						</a>
 					</li>
 					<li class="p-2">
-						<a href="" target="_blank">
+						<a href="https://twitter.com/hellomyfri_end" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png">
 						</a>
 					</li>
 					<li class="p-2">
-						<a href="" target="_blank">
+						<a href="https://www.instagram.com/hellomyfriend_official" target="_blank">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/instagram.png">
 						</a>
 					</li>
