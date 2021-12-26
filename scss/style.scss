@@ -58,7 +58,7 @@ a:focus, *:focus {
 
 
 header {
-	padding: 30px 0 50px;
+	padding: 30px 0 30px;
 
 	.menu {
 		@include mainFont();
@@ -87,6 +87,8 @@ header {
 
 	// メニューの切り替え
 	@media screen and (max-width: 400px) {
+		padding: 30px 0 1rem;
+
 		.inline-menu {
 			display: none;
 		}
@@ -111,7 +113,25 @@ header {
 
 main {
 	padding-bottom: 100px;
+
+	hr {
+		margin-bottom: 3rem;
+	} 
+
+	@media screen and (max-width: 400px) {
+		hr {
+			margin-bottom: 1.5rem;
+		}
+	}
 }
+
+// countryのページだけ隙間を開ける
+.page-id-23 {
+	main {
+		margin-top: 70px;
+	}
+}
+
 
 footer {
 	position: fixed;
@@ -160,6 +180,7 @@ h1 {
 	display: inline-block;
 	padding: 12px 0 8px;
 	border: 2px solid $main-color;
+	background: #fff;
 
 	a {
 		display: block;
@@ -191,7 +212,6 @@ h2 {
 		display: block;
 		text-align: center;
 		font-size: 50px;
-		font-weight: bold;
 
 		@media screen and (max-width: 990px) {
 			font-size: 40px;
@@ -267,6 +287,7 @@ h2 {
 			font-family: 'Cormorant Garamond', serif;
 			letter-spacing: 2px;
 			font-weight: bold;
+//			word-break : break-all;
 		}
 	}
 }
@@ -292,7 +313,7 @@ h2 {
 		justify-content: center;
 
 		li {
-			margin: 0 4px;
+			margin: 0 10px;
 //			position: absolute;
 			a {
 				@include mainFont();
@@ -334,25 +355,26 @@ h2 {
 			}
 */
 		}
-/*
+
 		@media screen and (max-width: 1200px) {
 			top: 50px;
-
 		}
 		@media screen and (max-width: 1000px) {
 			li a {
-				width: 120px;
-				height: 120px;
+				width: 110px;
+				height: 110px;
+				font-size: .9rem;
 			}
 		}
 		@media screen and (max-width: 800px) {
 			top: 20px;
 			li a {
-				width: 110px;
-				height: 110px;
+				width: 90px;
+				height: 90px;
+				font-size: .6rem;
 			}
 		}
-*/
+
 	}
 }
 
