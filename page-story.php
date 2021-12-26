@@ -26,6 +26,7 @@
 	get_template_part_arg('loop', false,[
 		'post_status' =>'publish',
 		'post__in' => $postIds,
+		'category__not_in' => [9], // Diaryを除く
 		'orderby' => 'post__in',
 		'order' => 'DESC',
 		'posts_per_page' => -1

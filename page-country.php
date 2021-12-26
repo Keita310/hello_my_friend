@@ -15,7 +15,7 @@
 				'hide_empty' => false,
 				'order' => 'ASC',
 				'orderby' => 'term_order',
-				'exclude' => '1'
+				'exclude' => '1,9' // 未分類とDiaryを除く
 			]);
 			foreach ($categories as $category):
 		?>
