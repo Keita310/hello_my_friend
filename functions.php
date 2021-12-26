@@ -3,6 +3,8 @@
  * functions.php
  */
 
+include('env.php');
+
 /* アイキャッチ
 ****************************************/
 add_theme_support('post-thumbnails');
@@ -53,5 +55,13 @@ function have_postss($arg) {
 	return ($query->have_posts());
 }
 
-
-
+/* env値をechoする
+****************************************/
+function theenv($key, $default = null){
+	$value = getenv($key);
+	if ($value) {
+		echo $value;
+	} else {
+		echo $default;
+	}
+}

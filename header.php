@@ -25,6 +25,15 @@
     <?php wp_enqueue_script('masonry-js','https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', array('jquery')); ?>
     <?php wp_enqueue_script('common-js', get_template_directory_uri() . '/js/common.js', array('jquery', 'bootstrap-js', 'vue-js', 'vue-infinite-loading-js', 'masonry-js')); ?>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php theenv('GA_ID'); ?>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '<?php theenv('GA_ID'); ?>');
+    </script>
+
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
