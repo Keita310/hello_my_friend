@@ -5,7 +5,7 @@
 ?>
 <?php get_header(); ?>
 
-<hr class="mb-5" style="border-top: 1px solid #000;">
+<hr style="border-top: 1px solid #000;">
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 	<div class="container">
